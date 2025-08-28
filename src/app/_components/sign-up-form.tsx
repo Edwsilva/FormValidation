@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useRef } from "react";
 
 export default function SignUpForm() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -23,7 +23,7 @@ export default function SignUpForm() {
     <form
       onSubmit={handleSubmit}
       ref={formRef}
-      // Preciso colocar a referencia do formulario (react)
+      // Preciso colocar a referencia do formulario (react) para nao ser null
       className="space-y-4 w-96 mx-auto mt-10"
     >
       <div>

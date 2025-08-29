@@ -20,3 +20,5 @@ export async function POST(request: NextRequest) {
     success: true,
   });
 }
+// Testar no postman desktop (metodo POST - body - raw - objeto para teste)
+// http://localhost:3000/api/auth/sign-up

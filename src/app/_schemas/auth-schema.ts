@@ -14,8 +14,10 @@ export const signUpFormSchema = z
     confirmPassword: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
+    // data e todo formulario preenchido
     message: "As senhas são diferentes",
     path: ["confirmPassword"],
+    // onde quero mostrar o erro
   });
 
 export type SignUpFormSchema = z.infer<typeof signUpFormSchema>;

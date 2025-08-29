@@ -33,6 +33,7 @@ export default function SignUpForm() {
       setErros(parsedData.error);
       return;
     }
+    setErros(undefined);
   }
 
   return (

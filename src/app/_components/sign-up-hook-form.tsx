@@ -3,6 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
+import { SignUpFormSchema, signUpFormSchema } from "../_schemas/auth-schema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export default function SignUpHookForm() {
   const {
@@ -10,9 +12,12 @@ export default function SignUpHookForm() {
     // Principal propriedade
     handleSubmit,
     // Executa tudo que precisa antes de submeter a sua funçao de fato
-  } = useForm();
+  } = useForm<SignUpFormSchema>({
+    resolver: zodResolver(signUpFormSchema),
+    // resolve o schema do zop. Poderia ser yup
+  });
 
-  function onSubmit(payload: any) {
+  function onSubmit(payload: SignUpFormSchema) {
     // Recebe os valore do formulario ja validado
     console.log("submit", payload);
   }

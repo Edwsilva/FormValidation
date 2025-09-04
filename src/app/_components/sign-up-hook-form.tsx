@@ -14,6 +14,7 @@ export default function SignUpHookForm() {
     // Executa tudo que precisa antes de submeter a sua funçao de fato
     formState: { errors },
     // Capturar erros
+    reset,
   } = useForm<SignUpFormSchema>({
     resolver: zodResolver(signUpFormSchema),
     // resolve o schema do zop. Poderia ser yup
@@ -22,6 +23,7 @@ export default function SignUpHookForm() {
   function onSubmit(payload: SignUpFormSchema) {
     // Recebe os valore do formulario ja validado
     console.log("submit", payload);
+    reset();
   }
 
   return (
